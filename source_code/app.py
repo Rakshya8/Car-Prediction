@@ -221,7 +221,7 @@ def predict_selling_price(brand, year,max_power, mileage, fuel, submit):
     lower_range = (predicted_price - (.07 * predicted_price))
 
     # Returning our outputs. We are returning the features to fill the form incase of null values
-    return[f"{predicted_price[0]}",f"{upper_range[0]}",f"{lower_range[0]}"] + list(features.values())
+    return[f"{predicted_price[0]}",f"{upper_range[0]:.2f}",f"{lower_range[0]:.2f}"] + list(features.values())
 
 # Working for the feature importance chart
 # Calling the final encoded dataframe
