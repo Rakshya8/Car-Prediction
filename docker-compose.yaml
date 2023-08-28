@@ -1,0 +1,14 @@
+version: '3'
+services:
+  dev:
+    command: python app.py
+    # command: tail -f /dev/null
+    image: labs01:latest
+    build: 
+      context: .
+      dockerfile: .Dockerfile
+    ports:
+      - 9999:8050
+    volumes:
+      - ./source_code:/root/code
+      - ./vscode-server:/root/.vscode-server
