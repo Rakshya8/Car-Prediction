@@ -28,7 +28,7 @@ label_car = pickle.load(open(brand_label,'rb'))
 fuel_car = pickle.load(open(brand_fuel,'rb'))
 rfr = pickle.load(open(rf_Model,'rb'))
 
-# get all brand names
+# getting all brand names
 brand_cat = list(label_car.classes_)
 fuel_cat = list(fuel_car.classes_)
 num_cols = ['max_power','year','mileage']
@@ -56,8 +56,8 @@ card_year = dbc.Card([
             html.H5(children='Please select the year of manufacture', style={'text-align': 'center', 'color':'white', 'background-color': '#051C75'}),
             dbc.Label(['Choose Manufacturing Year'], style={'font-weight': 'bold', "text-align": "center"}),
             dcc.Dropdown(id="year",
-                         value = vehicle_df['year'].unique()[0],
-                         options=[{"label": i, "value": i} for i in sorted(vehicle_df['year'].unique())],
+                         value = vehicle_df['year'].unique()[0], # get the default value which is the first value in our dataframe
+                         options=[{"label": i, "value": i} for i in sorted(vehicle_df['year'].unique())], # Getting all the values of year to show in our dropdown
                          searchable=True,  # This parameter helps user to search from dropdown
                          placeholder='Please select...',  # Default text when no option is selected
                          clearable=True,  # User can remove selected value from dropdown
@@ -221,6 +221,7 @@ def predict_selling_price(brand, year,max_power, mileage, fuel, submit):
     lower_range = (predicted_price - (.07 * predicted_price))
 
     # Returning our outputs. We are returning the features to fill the form incase of null values
+    # We are also returning the range of selling price as our model is only approx 93%. Hence the actual selling price is in the range of 7% higher and lower than the predicted value
     return[f"{predicted_price[0]}",f"{upper_range[0]:.2f}",f"{lower_range[0]:.2f}"] + list(features.values())
 
 # Working for the feature importance chart

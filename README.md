@@ -3,6 +3,7 @@
 
  # How to use:
  1. Download the file from github 
+ 2. Make sure the docker is running
  2. Perform composer up on docker-compose.yaml
  3. Wait for all dependencies to install
  4. Enter the url "http://localhost:9999/" in the web browser of your choice
