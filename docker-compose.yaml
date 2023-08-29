@@ -1,14 +1,18 @@
 version: '3'
 services:
   dev:
+    # Run the command in console to start the website
     command: python app.py
-    # command: tail -f /dev/null
+    # The name of the image
     image: labs01:latest
     build: 
       context: .
+      # The coker file to compse
       dockerfile: .Dockerfile
     ports:
+      # The port range to run the server
       - 9999:8050
     volumes:
+      # The dirs to store in the image
       - ./source_code:/root/code
       - ./vscode-server:/root/.vscode-server
