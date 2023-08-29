@@ -12,7 +12,7 @@
 
 ![2](https://github.com/Rakshya8/car-prediction/assets/45217500/6a6cf91c-632c-4f72-8ba2-958d400126b5)
 
-5. Perform composer up on docker-compose.yaml
+5. Perform compose up on docker-compose.yaml
 
 ![3](https://github.com/Rakshya8/car-prediction/assets/45217500/7e55144b-7bcc-4d06-a833-5940ffcc29b2)
 
